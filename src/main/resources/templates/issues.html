@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Issues</title>
+    <style type="text/css">
+        TABLE {
+            border: 1px solid black;
+        }
+
+        TH {
+            text-align: center;
+            background: black;
+            color: white;
+        }
+
+        TD, TH {
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Issue ID</th>
+        <th>Reader ID</th>
+        <th>Book ID</th>
+        <th>Issued</th>
+        <th>Returned</th>
+    </tr>
+    <tr th:each="person: ${issues}">
+        <td th:text="${person.getId()}"></td>
+        <td th:text="${person.getIdReader()}"></td>
+        <td th:text="${person.getIdBook()}"></td>
+        <td th:text="${person.getIssuedAt()}"></td>
+        <td th:text="${person.getReturnedAt()}"></td>
+    </tr>
+</table>
+</body>
+</html>
